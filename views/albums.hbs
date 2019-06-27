@@ -1,0 +1,21 @@
+
+  <nav class="nav">
+    <a  class="nav__item"href="/">🔎</a>
+    <a  class="nav__item"href="">Order by popularity</a>
+    <a  class="nav__item"href="">Order by Followers</a>
+  </nav>
+<div class="container d-flex flex-wrap  justify-content-center p-4">
+  {{#each albums}}
+  <div class="card m-4" style="width: 18rem;">
+   {{#if this.images.[0].url}}
+    <img src="{{this.images.[0].url}}" class="card-img-top" alt="...">
+  {{else}}
+    <img src="/img/no-img.png" class="card-img-top" alt="...">
+  {{/if}}
+  <div class="card-body text-center">
+    <h5 class="card-title">{{this.name}}</h5>
+    <a href="/tracks/{{this.id}}"" class="btn btn-primary">View Tracks</a>
+  </div>
+</div>
+{{/each}}
+</div>

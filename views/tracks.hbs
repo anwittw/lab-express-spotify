@@ -1,0 +1,29 @@
+<nav class="nav">
+  <a class="nav__item" href="/">🔎</a>
+  <a class="nav__item" href="">Order by popularity</a>
+  <a class="nav__item" href="">Order by Followers</a>
+</nav>
+<div class="container d-flex flex-wrap  justify-content-center p-4">
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Number</th>
+        <th scope="col">Title</th>
+        <th scope="col">Duration</th>
+        <th scope="col">Preview</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each tracks}}
+      <tr>
+        <th scope="row">{{this.track_number}}</th>
+        <td>{{this.name}}</td>
+        <td>{{this.duration}}</td>
+        <td><audio controls>
+            <source src="{{this.preview_url}}" type="audio/mpeg">
+          </audio></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
